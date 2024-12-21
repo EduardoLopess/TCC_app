@@ -3,6 +3,8 @@ import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native"
 
 const Table = ({id, tableNumber, status}) => {
 
+    const [createOrder, setCreateOrder] = useState([])
+
     const showId = () => {
         console.log(id)
     }

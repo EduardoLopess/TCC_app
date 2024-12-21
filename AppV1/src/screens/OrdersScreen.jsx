@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { OrderDrink } from "../../data/OrderDrink";
 import { OrderFood } from "../../data/OrderFood";
 import LineStyle from "../components/productComponents/styles/LineStyle";
+import ShoppingCart from "../components/shoppingCart/ShoppingCart";
 
 
 const OrdersScreen = () => {

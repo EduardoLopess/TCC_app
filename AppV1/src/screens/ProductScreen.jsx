@@ -6,6 +6,7 @@ import ProductNotAlcoholic from "../components/productComponents/ProductNotAlcoh
 import ProductPortions from "../components/productComponents/ProductPortions";
 import ProductPastries from "../components/productComponents/ProductPastries";
 import ProductLunch from "../components/productComponents/ProductLunch";
+import ShoppingCart from "../components/shoppingCart/ShoppingCart";
 
 const ProductScreen = () => {
     const [modalVisible, setModalVisible] = useState(false);
@@ -28,14 +29,21 @@ const ProductScreen = () => {
         <>
             <View style={styles.container}>
                 <View style={styles.containerContent}>
-                    <ProductBeer  openModal={() => openModal('beer')} closeModal={closeModal} modalVisible={modalVisible} modalIdentification={modalIdentification}/>
-                    <ProductDrink openModal={() => openModal('drink')} closeModal={closeModal} modalVisible={modalVisible} modalIdentification={modalIdentification}/>
-                    <ProductNotAlcoholic openModal={() => openModal('notAlcoholic')} closeModal={closeModal} modalVisible={modalVisible} modalIdentification={modalIdentification}/>
-                    <ProductPortions openModal={() => openModal('portions')} closeModal={closeModal} modalVisible={modalVisible} modalIdentification={modalIdentification}/>
-                    <ProductPastries openModal={() => openModal('pastries')} closeModal={closeModal} modalVisible={modalVisible} modalIdentification={modalIdentification}/>
-                    <ProductLunch openModal={() => openModal('lunch')} closeModal={closeModal} modalVisible={modalVisible} modalIdentification={modalIdentification}/>
+                    <ProductBeer  openModal={() => openModal('beer')} closeModal={closeModal} 
+                    modalVisible={modalVisible} modalIdentification={modalIdentification}/>
+                    <ProductDrink openModal={() => openModal('drink')} closeModal={closeModal} 
+                    modalVisible={modalVisible} modalIdentification={modalIdentification}/>
+                    <ProductNotAlcoholic openModal={() => openModal('notAlcoholic')} closeModal={closeModal} 
+                    modalVisible={modalVisible} modalIdentification={modalIdentification}/>
+                    <ProductPortions openModal={() => openModal('portions')} closeModal={closeModal} 
+                    modalVisible={modalVisible} modalIdentification={modalIdentification}/>
+                    <ProductPastries openModal={() => openModal('pastries')} closeModal={closeModal} 
+                    modalVisible={modalVisible} modalIdentification={modalIdentification}/>
+                    <ProductLunch openModal={() => openModal('lunch')} closeModal={closeModal} 
+                    modalVisible={modalVisible} modalIdentification={modalIdentification}/>
                 </View> 
             </View>
+            
         </>
     );
 }

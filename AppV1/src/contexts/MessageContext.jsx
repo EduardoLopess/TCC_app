@@ -1,15 +1,26 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const MessageContext = createContext()
+const messageContext = createContext()
 
 export const MessageProvider = ({children}) => {
+    const [message, setMessage] = useState({
+        text:'Teste',
+        type: 'info'
+        
+    })
+
+    const chargeMessage = (newMessage, type) => {
+        setMessage({text: newMessage, type})
+    }
+
+
     return (
-        <MessageProvider.Provider value={{}}>
+        <messageContext.Provider value={{message, chargeMessage}}>
             {children}
-        </MessageProvider.Provider>
+        </messageContext.Provider>
     )
 }
 
 
 
-export const useMessage = () => useContext(MessageContext)
+export const useMessage = () => useContext(messageContext)

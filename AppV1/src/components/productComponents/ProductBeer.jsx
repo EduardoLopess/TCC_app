@@ -8,8 +8,10 @@ import ItensStyle from "../productComponents/styles/ItensStyle";
 import CardStyle from "../productComponents/styles/CardStyle";
 import BtnAddRemove from "../productComponents/styles/BtnAddRemove";
 import LineStyle from "../productComponents/styles/LineStyle";
+import { useCart } from '../../contexts/CartContext';
 
 const ProductBeer = ({ modalIdentification, openModal, closeModal, modalVisible }) => {
+    const { addItem, removeItem } = useCart();
 
     const renderItemBeer = ({item}) => {
         return (
@@ -29,12 +31,12 @@ const ProductBeer = ({ modalIdentification, openModal, closeModal, modalVisible 
 
 
                 <View style = {BtnAddRemove.btnContainer}>
-                    <TouchableOpacity style = {[BtnAddRemove.btn, {backgroundColor: '#4E9726'}]}>
+                    <TouchableOpacity style = {[BtnAddRemove.btn, {backgroundColor: '#4E9726'}]} onPress={() => addItem(item.id)}>
                         <Ionicons name = "add-outline" size = {25}/>
 
                     </TouchableOpacity>
                     
-                    <TouchableOpacity style = {[BtnAddRemove.btn, {backgroundColor: '#E90000'}]}>
+                    <TouchableOpacity style = {[BtnAddRemove.btn, {backgroundColor: '#E90000'}]} onPress={() => removeItem(item.id)}>
                         <Ionicons name = "remove-outline" size = {25}/>
 
                     </TouchableOpacity>
